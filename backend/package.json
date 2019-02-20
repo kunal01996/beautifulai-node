@@ -1,0 +1,42 @@
+{
+  "name": "beautifulai-node",
+  "version": "1.0.0",
+  "description": "A LMS with CMS in MEAN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunal01996/beautifulai-node.git"
+  },
+  "keywords": [
+    "LMS",
+    "CMS",
+    "MEAN",
+    "NODEJS",
+    "ANGULAR",
+    "MONGODB",
+    "EXPRESS"
+  ],
+  "author": "Kunal Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kunal01996/beautifulai-node/issues"
+  },
+  "homepage": "https://github.com/kunal01996/beautifulai-node#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1"
+  }
+}

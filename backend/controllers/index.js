@@ -6,5 +6,6 @@
 exports.controllers = {
 
     // add your controllers
+    UserController : require('./UserController').UserController
     
 }

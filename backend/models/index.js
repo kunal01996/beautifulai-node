@@ -6,5 +6,6 @@
 exports.models = {
 
     // add your models
+    User: require('./User').User
     
 }

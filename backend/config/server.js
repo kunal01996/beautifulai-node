@@ -19,7 +19,7 @@
  let { controllers } = require(`${__basedir}/controllers`);
  let { models } = require(`${__basedir}/models`);
  let { helpers } = require(`${__basedir}/helpers`);
- let { language } = require(`${__basedir}/lang`);
+ let language  = require(`${__basedir}/lang`).language[process.env.APP_LANG];
 
  let bodyParser = require('body-parser');
 
@@ -35,12 +35,17 @@
 
     res.json({
         message: `Welcome to the app`
-    })
+    });
 
- })
+ });
+
+ serverConfig.app.post('/user', (req, res) => {
+     let User = models.User;
+     controllers.UserController.createUser(req, res, {User, helpers, language});
+ });
 
  module.exports = {
      app: serverConfig.app,
-     language: language[process.env.APP_LANG]
+     language: language
  }
 

@@ -44,6 +44,11 @@
      controllers.UserController.createUser(req, res, {User, helpers, language});
  });
 
+ serverConfig.app.post('/authenticate', (req, res) => {
+    let User = models.User;
+    controllers.AuthController.genAuthToken(req, res, {User, helpers, language});
+ });
+
  module.exports = {
      app: serverConfig.app,
      language: language

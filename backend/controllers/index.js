@@ -5,7 +5,8 @@
 
 exports.controllers = {
 
-    // add your controllers
-    UserController : require('./UserController').UserController
+    // add your controllers over here
+    UserController : require('./UserController').UserController,
+    AuthController: require('./AuthController').AuthController
     
 }

@@ -30,12 +30,7 @@ exports.UserController = {
             });
 
             newUser.password = newUser.generateHash(req.body.password);
-            newUser.save((err) => {
-                res.status(500).json({
-                    'status': err.status,
-                    'message': err.message
-                });
-            });
+            newUser.save();
 
             res.json({
                 'status': 200,
@@ -46,8 +41,8 @@ exports.UserController = {
         catch (e) {
             
             res.status(406).json({
-                'status': e.status,
-                'message': e.message
+                'status': 406,
+                'message': e.message || err
             });
 
         }

@@ -20,6 +20,7 @@
  let { models } = require(`${__basedir}/models`);
  let { helpers } = require(`${__basedir}/helpers`);
  let language  = require(`${__basedir}/lang`).language[process.env.APP_LANG];
+ let mongoose = require('./mongoose').mongoose;
 
  let bodyParser = require('body-parser');
 

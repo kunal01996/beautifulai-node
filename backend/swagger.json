@@ -1,0 +1,22 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is an API Doc for the beatutiful-ai project being developed in MEAN stack.",
+        "version": "1.0.0",
+        "title": "BeautifulAI-Node",
+        "contact": {
+            "email": "kunalsingh20102006@gmail.com"
+        },
+        "host": "localhost:3000",
+        "basepath": "/",
+        "tags": [
+            {
+                "name": "App specific APIs",
+                "description": "Everythong about the APIs for the application"
+            }
+        ],
+        "schemes": [
+            "http"
+        ]
+    } 
+}

@@ -8,8 +8,7 @@ exports.jwtAuth = {
 
     config: {
 
-        expiresIn: '24h',
-        algorithm: 'RS256' 
+        expiresIn: '24h'
 
     }
 

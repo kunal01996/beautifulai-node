@@ -26,13 +26,14 @@
 
  // Defining all the generic middlewares (that would run on every request made).
  serverConfig.app.use(bodyParser.json());
+ serverConfig.app.use(bodyParser.urlencoded({extended:true}));
 
  serverConfig.app.use((req, res, next) => {
     middlewares.logger(req, res, next);
  });
 
  // Defining all routes to controllers over here
- serverConfig.app.get('/', (req, res) => {
+ serverConfig.app.get('/', middlewares.authentication.checkToken, (req, res) => {
 
     res.json({
         message: `Welcome to the app`

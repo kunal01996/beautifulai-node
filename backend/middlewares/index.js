@@ -6,6 +6,8 @@
 exports.middlewares = {
 
     // add your middlewares
-    logger: require('./logger').logger
+    logger: require('./logger').logger,
+    authentication: require('./authentication').authentication,
+    errorHandlers: require('./errorHandler').errorHandlers 
     
 }

@@ -10,7 +10,7 @@ exports.logger = (req, res, next) => {
     let logString = `${now}: ${req.method} ${req.url}\n`;
     let logFileName = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}.log`;
 
-    fs.appendFileSync(`${__basedir}/logs/${logFileName}`, logString);
+    fs.appendFileSync(`${__basedir}/logs/api/${logFileName}`, logString);
 
     next();
 

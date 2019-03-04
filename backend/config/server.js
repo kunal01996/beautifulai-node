@@ -21,12 +21,20 @@
  let { helpers } = require(`${__basedir}/helpers`);
  let language  = require(`${__basedir}/lang`).language[process.env.APP_LANG];
  let mongoose = require('./mongoose').mongoose;
+ let morgan = require('morgan');
+ let winston = require('./winston');
 
  let bodyParser = require('body-parser');
 
  // Defining all the generic middlewares (that would run on every request made).
  serverConfig.app.use(bodyParser.json());
  serverConfig.app.use(bodyParser.urlencoded({extended:true}));
+ serverConfig.app.use(morgan('combined', {stream: winston.stream}));
+
+ // error handler
+ serverConfig.app.use((err, req, res, next) => {
+     middlewares.errorHandlers.expressErrorHandler(err, req, res, next);
+ })
 
  serverConfig.app.use((req, res, next) => {
     middlewares.logger(req, res, next);
